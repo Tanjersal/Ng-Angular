@@ -1,0 +1,18 @@
+<p *ngIf="!allowEdit">You are not allowed to edit!</p>
+
+<div *ngIf="allowEdit">
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName" />
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select id="status" class="form-control" [(ngModel)]="serverStatus">
+      <option value="Online">Online</option>
+      <option value="Offline">Offline</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" (click)="onServerUpdate()">
+    Update Server
+  </button>
+</div>
